@@ -21,18 +21,19 @@ const SearchMovie = () => {
         }
     }
     return (
-        <div>
-            <form className="form" onSubmit={fetchMovies}>
-                <label className="label" htmlFor="query">Movie name</label>
-                <input 
-                    className="input" 
-                    type="text" 
-                    name="query" 
-                    placeholder="i.e. The Irishman" 
-                    value={searchTerm} 
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                />
-                <button className="button" type="submit">Search</button>
+        <div className="ui container">
+            <form className="form ui container" onSubmit={fetchMovies}>
+                <div class="ui huge fluid icon input">    
+                    <input 
+                        className="input" 
+                        type="text" 
+                        name="query" 
+                        placeholder="Search..." 
+                        value={searchTerm} 
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                    <i class="circular search link icon"></i>
+                </div>
             </form>
             <MovieList movies={movies}/>
         </div>
