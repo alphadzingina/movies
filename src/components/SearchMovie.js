@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
+import MovieList from './MovieList';
 
 const SearchMovie = () => {
 
     const [searchTerm, setSearchTerm] = useState('');
-    const [searchResult, setSearchResult] = useState([]);
+    const [movies, setMovies] = useState([]);
 
     const fetchMovies = async (e) => {
         e.preventDefault();
@@ -13,7 +14,8 @@ const SearchMovie = () => {
         try {
             const res = await fetch(url);
             const data  = await res.json();
-            setSearchResult(data.results)
+            console.log(data.results);
+            setMovies(data.results)
         }catch(err){
             console.error(err);
         }
@@ -32,6 +34,7 @@ const SearchMovie = () => {
                 />
                 <button className="button" type="submit">Search</button>
             </form>
+            <MovieList movies={movies}/>
         </div>
     );
 };
