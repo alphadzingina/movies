@@ -24,7 +24,7 @@ const SearchBar= () => {
     return (
         <div className="ui container">
             <form className="form ui container" onSubmit={fetchMovies}>
-                <div class="ui huge fluid icon input">    
+                <div className="ui huge fluid icon input">    
                     <input 
                         className="input" 
                         type="text" 
@@ -33,7 +33,7 @@ const SearchBar= () => {
                         value={searchTerm} 
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />
-                    <i class="circular search link icon"></i>
+                    <i className="circular search link icon"></i>
                 </div>
             </form>
             <MovieList movies={movies}/>
