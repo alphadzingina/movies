@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import MovieList from './MovieList';
 
-const SearchMovie = () => {
+const SearchBar= () => {
 
     const [searchTerm, setSearchTerm] = useState('');
     const [movies, setMovies] = useState([]);
@@ -20,6 +20,7 @@ const SearchMovie = () => {
             console.error(err);
         }
     }
+    
     return (
         <div className="ui container">
             <form className="form ui container" onSubmit={fetchMovies}>
@@ -40,4 +41,4 @@ const SearchMovie = () => {
     );
 };
 
-export default SearchMovie; 
+export default SearchBar; 
